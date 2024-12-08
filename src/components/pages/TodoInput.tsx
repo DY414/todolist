@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import { useState } from "react";
+import styled from "@emotion/styled";
 
 interface Props {
   onAddTodo: (text: string) => void

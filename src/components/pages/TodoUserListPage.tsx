@@ -4,9 +4,12 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { TodoItemType } from "../../atom/todoAtom";
+
 import TodoInput from "./TodoInput";
 import TodoDashboard from "./TodoDashboard";
+
 import { useTodoActions } from "../../hooks/useTodoActions";
+
 
 const Container = styled.div`
   width: 100%;

@@ -1,8 +1,10 @@
 'use client';
 
-import styled from "@emotion/styled";
-import { TodoItemType } from "../../atom/todoAtom";
 import { useState } from "react";
+import styled from "@emotion/styled";
+
+import { TodoItemType } from "../../atom/todoAtom";
+
 import { TextType } from "./TodoUserListPage";
 import TodoItem from "./TodoItem";
 

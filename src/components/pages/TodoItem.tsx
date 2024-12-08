@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import { TodoItemType } from "../../atom/todoAtom";
 import CloseSVG from '../../../public/icons/Close.svg';
 import CheckSVG from '../../../public/icons/Check.svg';
+
+import { TodoItemType } from "../../atom/todoAtom";
 
 interface Props {
   todoItem: TodoItemType,

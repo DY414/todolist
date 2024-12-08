@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { idCounterState, TodoItemType, todoListState } from '../atom/todoAtom';
 import { useRecoilState } from 'recoil';
+import { idCounterState, TodoItemType, todoListState } from '../atom/todoAtom';
 
 export const useTodoActions = () => {
   const [todoList, setTodoList] = useRecoilState<TodoItemType[]>(todoListState);
