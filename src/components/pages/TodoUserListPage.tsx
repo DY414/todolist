@@ -3,13 +3,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { TodoItemType } from "../../atom/todoAtom";
-
 import TodoInput from "./TodoInput";
 import TodoDashboard from "./TodoDashboard";
 
 import { useTodoActions } from "../../hooks/useTodoActions";
-
 
 const Container = styled.div`
   width: 100%;
@@ -37,15 +34,11 @@ const Content = styled.div`
 `
 
 
-interface Props {
-  todoList: TodoItemType[]
-}
-
 export type TextType = "All" | "To do" | "Done";
 
-const TodoUserListPage = ({todoList}: Props) => {
-  const { addHandler, checkHandler, deleteHandler } = useTodoActions();
-
+const TodoUserListPage = () => {
+  const { todoList, addHandler, checkHandler, deleteHandler } = useTodoActions();
+  
   return (
     <Container>
       <Title>
