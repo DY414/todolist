@@ -66,14 +66,21 @@ const SmallButton = styled.button`
 const TodoItem = ({todoItem, onCheck, onDelete}: Props) => {
   const { id, text } = todoItem;
 
-  return (<Item key={id}>
-    <LargeButton className={`${todoItem.done ? "Selected" : ""}`} onClick={onCheck} >
+  return (<Item role={'listitem'} key={id} >
+    <LargeButton 
+      role={"checkbox"} aria-checked={todoItem.done}
+      className={`${todoItem.done ? "Selected" : ""}`}
+      onClick={onCheck} 
+    >
       <CheckSVG />
     </LargeButton>
     <ItemText>
       {text}
     </ItemText>
-    <SmallButton onClick={onDelete} >
+    <SmallButton 
+      role={"button"} aria-label={"deleteitem"}
+      onClick={onDelete} 
+    >
       <CloseSVG />
     </SmallButton>
   </Item>)

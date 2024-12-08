@@ -57,6 +57,7 @@ const TodoInput = ({onAddTodo: onCreateTodo}: Props) => {
 
   return (<InputWrapper inputLength={text.length} >
     <input
+      role={'textbox'}
       value={text}
       onChange={changeHandler}
       onKeyDown={keyDownHandler}
