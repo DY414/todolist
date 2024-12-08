@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 
 interface Props {
-  onCreateTodo: (text: string) => void
+  onAddTodo: (text: string) => void
 }
 
 const InputWrapper = styled.label<{ inputLength: number }>`
@@ -40,7 +40,8 @@ const InputWrapper = styled.label<{ inputLength: number }>`
 `
 
 
-const TodoInput = ({onCreateTodo}: Props) => {
+const TodoInput = ({onAddTodo: onCreateTodo}: Props) => {
+  
   const [ text, setText ] = useState<string>("");
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
