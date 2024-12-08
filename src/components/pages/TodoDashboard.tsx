@@ -85,7 +85,7 @@ const TodoDashboard = ({todoList, onCheck, onDelete}: Props) => {
             )}
           </TypeBox>
           <TodoBox>
-            <TodoTitle>{`총 ${todoList.length}개`}</TodoTitle>
+            <TodoTitle>{`총 ${filteredTodoList.length}개`}</TodoTitle>
             {filteredTodoList.map( item => 
               <TodoItem 
                 todoItem={item} 

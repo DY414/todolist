@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { TodoItemType, todoListState } from '../atom/todoAtom';
+import { idCounterState, TodoItemType, todoListState } from '../atom/todoAtom';
 import { useRecoilState } from 'recoil';
 
 export const useTodoActions = () => {
   const [todoList, setTodoList] = useRecoilState<TodoItemType[]>(todoListState);
+  const [idCounter, setIdCounter] = useRecoilState(idCounterState);
+
+  const undoneTodos = todoList.filter( todoItem => !todoItem.done )
 
   const addHandler = (text: string) => {
     if ( !text  ) return;
@@ -13,13 +16,13 @@ export const useTodoActions = () => {
       return;
     }
 
-    const unDoneTodoCount = todoList.filter( todoItem => !todoItem.done ).length;
-    if ( unDoneTodoCount >= 10 ) {
-      alert(`처리가 안된 '할 일'은 10개를 넘을 수 없습니다.\n(현재: ${unDoneTodoCount}개 입니다.)`);
+    if ( undoneTodos.length >= 10 ) {
+      alert(`처리가 안된 '할 일'은 10개를 넘을 수 없습니다.\n(현재: ${undoneTodos.length}개 입니다.)`);
       return;
     }
 
-    setTodoList( prev => prev.concat({id: 4, text, done: false}));
+    setTodoList( prev => prev.concat({id: idCounter + 1, text, done: false}));
+    setIdCounter( prev => prev + 1);
   } 
 
   const deleteHandler = (item: TodoItemType) => {
@@ -27,6 +30,11 @@ export const useTodoActions = () => {
   };
 
   const checkHandler = (item: TodoItemType) => {
+    if ( item.done && undoneTodos.length >= 10 ) {
+      alert(`처리가 안된 '할 일'은 10개를 넘을 수 없습니다.\n(현재: ${undoneTodos.length}개 입니다.)`);
+      return;
+    }
+    
     setTodoList( prev => prev.map( todoItem => 
       todoItem.id === item.id 
         ? {...todoItem, done: !todoItem.done} 

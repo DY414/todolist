@@ -45,16 +45,13 @@ const TodoInput = ({onAddTodo: onCreateTodo}: Props) => {
   const [ text, setText ] = useState<string>("");
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if ( !!e.target.value ){
-      setText(e.target.value);
-    }
+    setText(e.target.value);
   }
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if ( event.key === "Enter" && !!text ) {
       onCreateTodo(text);
       setText("");
-      event.currentTarget.blur();
     }
   }
 

@@ -15,3 +15,8 @@ export const todoListState = atom<TodoItemType[]>({
         { id: 3, text: '주간회의 참여하기', done: true },
     ],
 });
+
+export const idCounterState = atom<number>({
+    key: 'idCounterState',
+    default: 3, // 초기값을 0으로 설정
+});

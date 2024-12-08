@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { useSetRecoilState } from "recoil";
 
-import { TodoItemType, todoListState } from "../../atom/todoAtom";
-import TodoItem from "./TodoItem";
+import { TodoItemType } from "../../atom/todoAtom";
 import TodoInput from "./TodoInput";
 import TodoDashboard from "./TodoDashboard";
-import { useTodoActions } from "../../hook/useTodoList";
+import { useTodoActions } from "../../hooks/useTodoActions";
 
 const Container = styled.div`
   width: 100%;
@@ -43,7 +41,6 @@ interface Props {
 export type TextType = "All" | "To do" | "Done";
 
 const TodoUserListPage = ({todoList}: Props) => {
-
   const { addHandler, checkHandler, deleteHandler } = useTodoActions();
 
   return (
