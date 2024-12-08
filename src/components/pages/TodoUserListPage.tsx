@@ -99,6 +99,13 @@ const TodoUserListPage = ({todoList}: Props) => {
                               :todoList
 
   const CreateTodoHandler = (text: string) => {
+    if ( !text  ) return;
+
+    if ( text.length > 20 ) {
+      alert(`'할 일'은 20글자를 넘길 수 없습니다.\n(현재: ${text.length}글자입니다.)`);
+      return;
+    }
+    
     setTodoList( prev => prev.concat({id: 4, text, done: false}));
   } 
 
