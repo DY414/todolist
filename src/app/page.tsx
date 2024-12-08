@@ -8,9 +8,7 @@ import { todoListState } from "../atom/todoAtom";
 import '../components/styles/Global.css';
 
 const Page = () => {
-  const todoList = useRecoilValue(todoListState);
-
-  return <TodoUserListPage todoList={todoList} />;
+  return <TodoUserListPage />;
 };
 
 export default Page;

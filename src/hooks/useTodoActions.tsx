@@ -41,6 +41,7 @@ export const useTodoActions = () => {
   };
 
   return {
+    todoList,
     addHandler,
     deleteHandler,
     checkHandler,
