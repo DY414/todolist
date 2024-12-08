@@ -40,7 +40,7 @@ describe("todo 테스트", () => {
 
     const longTodoItem = screen.queryByText('책상을 정리하고 이메일을 답장하고 운동을 1시간 하고 저녁 메뉴를 결정하기');
 
-    expect(longTodoItem).toBeNull;
+    void expect(longTodoItem).toBeNull;
 
     // 하지 않은 일이 10개 이상 만들어보기(기능)
     const newTodos = [
@@ -68,7 +68,7 @@ describe("todo 테스트", () => {
     
       if (uncheckedItems.length >= 10) {
         const notAddedTodo = screen.queryByText(todo);
-        expect(notAddedTodo).toBeNull;
+        void expect(notAddedTodo).toBeNull;
       } else {
         expect(screen.getByText(todo)).toBeInTheDocument();
       }
@@ -86,7 +86,7 @@ describe("todo 테스트", () => {
     fireEvent.click(deleteButton);
 
     const deletedTodo = screen.queryByText("일찍 잠자기");
-    expect(deletedTodo).toBeNull;
+    void expect(deletedTodo).toBeNull;
 
     /** All, To do, done 탭 작동 확인하기 */
     const AllTab = screen.getByText("All");

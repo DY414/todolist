@@ -76,9 +76,9 @@ const TodoDashboard = ({todoList, onCheck, onDelete}: Props) => {
         <Dashboard>
           <TypeBox>
             {(["All", "To do", "Done"] as const).map( (text) => 
-              <TypeButton 
+              <TypeButton
                 isSelected={type === text} key={text}
-                onClick={(e) => {
+                onClick={() => {
                   setType(text);
                 }} 
               >
