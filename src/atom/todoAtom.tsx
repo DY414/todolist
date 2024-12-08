@@ -1,13 +1,13 @@
 'use client';
 import { atom } from "recoil";
 
-export type todoItemType = {
+export type TodoItemType = {
     id: number;
     text: string;
     done: boolean;
 };
 
-export const todoListState = atom<todoItemType[]>({
+export const todoListState = atom<TodoItemType[]>({
     key: 'todoListState',
     default: [
         { id: 1, text: '출근하고 비타민 먹기', done: false },
