@@ -3,7 +3,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts", 
+    "__mocks__/svgMock.tsx"
   ],
   "exclude": [
     "node_modules",

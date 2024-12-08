@@ -1,9 +1,13 @@
+'use client'
 import React from "react";
+
 import TodoUserListPage from "../components/pages/TodoUserListPage";
+import { useRecoilValue } from "recoil";
+import { todoListState } from "../atom/todoAtom";
 
-interface Props {}
+import '../components/styles/Global.css';
 
-const Page = ({}: Props) => {
+const Page = () => {
   return <TodoUserListPage />;
 };
 
