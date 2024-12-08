@@ -40,7 +40,7 @@ const InputWrapper = styled.label<{ inputLength: number }>`
 `
 
 
-const TextInput = ({onCreateTodo}: Props) => {
+const TodoInput = ({onCreateTodo}: Props) => {
   const [ text, setText ] = useState<string>("");
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,4 +67,4 @@ const TextInput = ({onCreateTodo}: Props) => {
   </InputWrapper>);
 }
 
-export default TextInput;
+export default TodoInput;
